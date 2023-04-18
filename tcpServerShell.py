@@ -20,10 +20,11 @@ def main():
 			#sock.send(b'ACK')
 			
 			#exec in the system
-			response_system = str(os.system(request.decode("utf-8")))
-#			response_system = str(f"code return: {os.system('echo $?')}")
-			sock.send(response_system.encode())
-
+			response_system = bytes(os.system(f"x=$({request.decode('utf-8')}) ; echo $x"))
+			#var_system = str(f"code return: {os.system('echo $x')}")
+			#sock.send(var_system.encode())
+			#sock.send(response_system)
+			#print(f"response: {response_system}")
 
 	while True:
 		client, address = server.accept()
