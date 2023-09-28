@@ -5,7 +5,7 @@ import socket
 
 
 
-target_host = "www.google.com"
+target_host = "192.168.121.145"
 target_port = 80
 
 
